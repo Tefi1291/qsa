@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css"  type="text/css">
+    <link type="text/css" rel="stylesheet" href="static/css/color-button.css" />
+	<!--<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+	-->
+	<script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/custom.js"></script>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+	
+	 <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <a class="brand" href="#">Home</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  	<ul class="dropdown-menu">
+                    		<li><a href="#">Action</a></li>
+                    		<li><a href="#">Another action</a></li>
+                    		<li><a href="#">Something else here</a></li>
+                    		
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+    <!-- Fin de navbar-wrapper -->
+	<!--<img src="{{ STATIC_URL }}img/" alt="" >  Agregar una imagen de portada-->
+	{% block content %}
+	
+   {% endblock content %}
+	
+</body>
+</html>
