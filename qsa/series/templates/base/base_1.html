@@ -9,28 +9,30 @@
     <script src="static/js/bootstrap.min.js"></script>
     <script src="static/js/custom.js"></script>
 </head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<body data-spy="scroll" data-target=".bs-docs-sidebar"  >
 	
 	 <div class="navbar-wrapper">
       <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
       <div class="container">
         <div class="navbar navbar-inverse">
           <div class="navbar-inner">
-            <a class="brand" href="#">Home</a>
+            <a class="brand" >Que Salio Anoche?</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  	<ul class="dropdown-menu">
-                    		<li><a href="#">Action</a></li>
-                    		<li><a href="#">Another action</a></li>
-                    		<li><a href="#">Something else here</a></li>
-                    		
-                  </ul>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/about">Wiki</a></li>
+                <li><a href="/contact">Contactanos</a></li>
+                {%if user.is_authenticated %}
+                	<li class="dropdown">
+                		<!-- estaria bueno hacer con js un menu desplegable -->
+                  	<a href="my_profile/" class="dropdown-toggle" > {{user}}</a>
+                  		<ul class="dropdown-menu">
+                    			<li><a href="/accounts/profile/">Perfil</a></li>
+                    			<li><a href="#">Mis series</a></li>
+	                  	</ul>
                 </li>
+                <li><a href="/logout">Salir</a></li>
+                {% endif %}
               </ul>
             </div>
           </div>

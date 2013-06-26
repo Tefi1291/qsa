@@ -1,5 +1,4 @@
 {% extends "base/base_1.html" %}
-
 {% block content %}
 	{%if not user.is_authenticated %}
 		<div class="span9">
@@ -8,7 +7,7 @@
                         <div class="row">
                             <div class="login-content span4 offset4">
                                 <div class="header-login well">
-                                    <h3>Login</h3>
+                                   <center><h3>Login</h3></center>
                                 </div>
                                 <form class="well" method="post">	
         									{{ form.as_p }}
@@ -20,13 +19,11 @@
                 		</div>
                 	</div>
          </div>
-         
-	{%else%}
-		<p>Bienvenido {{user}}</p> 
-		<a href="/accounts/profile/"> Mi perfil </a>
+   
 	{%endif%}
-	<div class="span10">
-		<button> Registrarse</button>	
+	<div class="span6">
+		
+		<button class="btn btn-large"> Registrate </button>	
 	</div>
-	
+
 {% endblock%}

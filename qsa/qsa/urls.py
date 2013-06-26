@@ -6,9 +6,11 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'django.contrib.auth.views.login', {'template_name': "index.html"}),
-    # url(r'^qsa/', include('qsa.foo.urls')),
-    # Uncomment the admin/doc line below to enable admin documentation:
-    #url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', {'login_url': "/"}),
+    url(r'^my_profile/$', profile),
+    url(r'^about/$', about),
+    url(r'^contact/$', contact),
+
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),

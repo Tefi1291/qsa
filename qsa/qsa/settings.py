@@ -163,3 +163,4 @@ LOGGING = {
         },
     }
 }
+LOGIN_REDIRECT_URL = 'my_profile/'

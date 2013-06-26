@@ -1,13 +1,22 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Series(models.Model):
-
-    id_serie = models.PositiveIntegerField(primary_key=True)
+    # el id_serie corresponde con el id de la base de datos de tvdb
+    # el cual deberia ser unico/ no editable desde el formulario
+    id_serie = models.PositiveIntegerField() #editable=False
     serie_name = models.CharField(max_length=30)
 
     def __str__(self):
         return self.serie_name
+
+    def traer_serie(self):
+        # crear xml
+        # enviar una peticion a la api de tvdb
+        # llenar los campos
+        #self.save()
+        pass
 
 
 class Season(models.Model):
@@ -31,13 +40,14 @@ class Episode(models.Model):
     def __str__(self):
         return self.name_e
 
-class User(models.Model):
 
+class ProfileUser (models.Model):
+    user = models.OneToOneField(User)
     series = models.ManyToManyField(Series)
-    name_u = models.CharField(max_length=30)
+    #img = models.ImageField()
 
     def __str__(self):
-        return self.name_u
+        return self.user.username
 
 
 
